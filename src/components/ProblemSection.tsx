@@ -1,56 +1,31 @@
 
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ArrowDown } from "lucide-react";
 
 export function ProblemSection() {
   return (
-    <section className="w-full bg-gray-50 py-24 sm:py-32">
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <div className="flex flex-col items-center text-center mb-8">
-          <h2 className="text-center text-base/7 font-semibold text-primary">The reality</h2>
-          <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-gray-950 sm:text-5xl">
-            The problem with hiring today
-          </p>
-          <p className="text-lg text-muted-foreground max-w-2xl mt-4 font-dm-sans">
+    <section className="w-full py-24 bg-slate-50">
+      <div className="container mx-auto">
+        <div className="flex flex-col items-center text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-[-2px] leading-tight font-dm-sans mb-6">
+            THE PROBLEM WITH HIRING TODAY
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl font-dm-sans">
             If you're reading this, you're facing the below challenges when hiring
           </p>
         </div>
         
-        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            {
-              title: "Spending too much",
-              content: "Spending too much on traditional recruitment agencies with high fees and no guarantee of quality"
-            },
-            {
-              title: "Not getting great talent",
-              content: "Experiencing frustration with candidates who don't match your requirements or culture"
-            },
-            {
-              title: "Stressed about hiring",
-              content: "Feeling overwhelmed by having to handle recruitment yourself while managing your core business"
-            },
-            {
-              title: "Lost confidence & productivity",
-              content: "Dealing with the aftermath of bad hires that impact team morale and business performance"
-            }
+            "Spending too much on traditional recruitment agencies",
+            "Not getting great talent",
+            "Stressed about having to do hiring yourself and falling behind",
+            "Lost confidence & team productivity due to a recent bad hire"
           ].map((problem, index) => (
-            <Card key={index} className={`relative overflow-hidden ${index === 0 ? "lg:row-span-2" : ""} ${index === 3 ? "lg:row-span-2 lg:col-start-3 lg:row-start-1" : ""}`}>
-              <div className="absolute inset-px rounded-lg bg-white"></div>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-                <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                    {problem.title}
-                  </p>
-                  <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    {problem.content}
-                  </p>
-                </div>
-                <div className="flex flex-1 items-center justify-center p-4">
-                  {/* Content area - no images as requested */}
-                </div>
-              </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5"></div>
+            <Card key={index} className="overflow-hidden rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md">
+              <CardContent className="p-8">
+                <p className="text-lg font-medium font-dm-sans">{problem}</p>
+              </CardContent>
             </Card>
           ))}
         </div>
