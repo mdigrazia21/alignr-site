@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen font-dm-sans">
       <Navbar />
-      <div className="pt-16"> {/* Reduced padding from pt-20 to pt-16 */}
+      <div className="pt-14"> {/* Reduced padding from pt-16 to pt-14 */}
         <Hero1 />
         <ProblemSection />
         <WhatWeDoSection />
