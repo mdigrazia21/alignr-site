@@ -25,9 +25,12 @@ export function Navbar() {
     >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold font-dm-sans flex items-center gap-2">
-            <span className={`transition-colors ${isScrolled ? 'text-primary' : 'text-black'}`}>Hire</span>
-            <span className="text-primary">Craft</span>
+          <a href="#" className="flex items-center gap-2">
+            <img 
+              src="/lovable-uploads/221f4612-db32-4bee-a6b6-fe3ac02dd0f2.png" 
+              alt="alignr logo" 
+              className="h-10 w-auto transition-all duration-300"
+            />
           </a>
           
           <div className="hidden md:flex items-center gap-8">

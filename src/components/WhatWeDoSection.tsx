@@ -19,11 +19,11 @@ export function WhatWeDoSection() {
             <span className="text-muted-foreground">(PLAIN AND SIMPLE)</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl font-dm-sans mb-12">
-            We're a modern recruitment agency for SMEs: hire better & more cost-effectively, 
-            and without the usual hiring headaches.
+            We're a modern recruitment platform for growing companies: helping you hire better, 
+            align teams more effectively, and scale with confidence.
           </p>
           <div className="w-full max-w-2xl">
-            <p className="text-lg font-dm-sans mb-6">Consider us your corporate services hiring partner across roles like:</p>
+            <p className="text-lg font-dm-sans mb-6">We help align your organization by finding the perfect talent across:</p>
             <div className="flex flex-wrap gap-3 justify-center">
               {roles.map((role, index) => (
                 <Badge key={index} className="px-4 py-2 bg-primary/10 text-primary text-base rounded-2xl transition-all hover:scale-105">

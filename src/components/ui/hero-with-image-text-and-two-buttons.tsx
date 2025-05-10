@@ -14,11 +14,11 @@ function Hero() {
             </div>
             <div className="flex gap-4 flex-col">
               <h1 className="text-5xl md:text-7xl max-w-lg tracking-[-2px] leading-[1.4] text-left font-medium font-dm-sans">
-                Our mission is to help Companies hire, grow and scale better and more cost-effectively 
+                Helping companies align with the right talent
               </h1>
               <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left font-dm-sans">
-               Scaling your team? Need a different approach? Let's cut the noise, hire what matters, and 
-               save you time and headaches  
+                Need a different approach to scaling your team? We help you find perfectly aligned talent,
+                reduce hiring costs, and eliminate recruitment headaches.
               </p>
             </div>
             <div className="flex flex-row gap-4">
