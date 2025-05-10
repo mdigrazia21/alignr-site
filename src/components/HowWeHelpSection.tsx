@@ -1,5 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+import { Card } from "@/components/ui/card";
 import { Users, Clock, Banknote, Check, Bookmark, Heart } from "lucide-react";
+
 export function HowWeHelpSection() {
   const benefits = [{
     title: "Reduce your hiring costs",
@@ -26,24 +28,38 @@ export function HowWeHelpSection() {
     description: "We provide in-depth support across interview scorecards & tactics to give you more confidence, and post placement support to protect your investment and help them thrive!",
     icon: <Heart className="w-10 h-10 text-primary" />
   }];
+  
   return <section className="w-full bg-slate-50 py-[72px]">
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-[-2px] leading-tight font-dm-sans mb-6">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <div className="flex flex-col items-center text-center mb-8">
+          <h2 className="text-center text-base/7 font-semibold text-primary">Plain and simple</h2>
+          <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-gray-950 sm:text-5xl">
             How we help you
-          </h2>
+          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl mt-4 font-dm-sans">
+            We're a modern recruitment platform for growing companies: helping you hire better, 
+            align teams more effectively, and scale with confidence.
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => <Card key={index} className="overflow-hidden rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md hover:translate-y-[-5px]">
-              <CardHeader className="pb-0">
-                <div className="mb-4">{benefit.icon}</div>
-                <CardTitle className="text-xl font-dm-sans">{benefit.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-2">
-                <p className="text-muted-foreground font-dm-sans">{benefit.description}</p>
-              </CardContent>
-            </Card>)}
+        <div className="mt-10 grid gap-4 sm:mt-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {benefits.map((benefit, index) => (
+            <Card key={index} className="relative overflow-hidden h-full">
+              <div className="absolute inset-px rounded-lg bg-white"></div>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+                <div className="flex flex-col items-center justify-center h-full text-center px-8 py-10">
+                  <div className="mb-4">{benefit.icon}</div>
+                  <p className="text-lg font-medium tracking-tight text-gray-950">
+                    {benefit.title}
+                  </p>
+                  <p className="mt-2 text-sm/6 text-gray-600">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5"></div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>;
