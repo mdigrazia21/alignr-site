@@ -7,7 +7,7 @@ function Hero1() {
   return (
     <div className="w-full">
       <div className="container mx-auto">
-        <div className="flex gap-8 py-16 md:py-20 lg:pt-32 lg:pb-24 items-center justify-center flex-col">
+        <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col lg:pt-28 lg:pb-32">
           <div>
             <Badge variant="outline">We&apos;re live!</Badge>
           </div>
