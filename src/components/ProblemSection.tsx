@@ -60,7 +60,7 @@ export function ProblemSection() {
               <ArrowDown size={24} />
             </div>
           </div>
-          <h3 className="text-3xl font-medium mt-4 font-dm-sans tracking-tight">WHAT DO YOU DO?</h3>
+          <h3 className="text-3xl font-medium mt-4 font-dm-sans tracking-tight">What do you do?</h3>
         </div>
       </div>
     </section>;
