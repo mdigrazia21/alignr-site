@@ -13,7 +13,7 @@ function Hero1() {
           </div>
           <div className="flex gap-4 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-medium font-dm-sans">
-              Helping companies align with the right talent
+              Helping companies align with the right<br /> talent
             </h1>
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
               Need a different approach to scaling your team? We help you find perfectly aligned talent,
