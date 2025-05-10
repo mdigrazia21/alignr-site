@@ -35,19 +35,16 @@ export function ProblemSection() {
               content: "Dealing with the aftermath of bad hires that impact team morale and business performance"
             }
           ].map((problem, index) => (
-            <Card key={index} className={`relative overflow-hidden ${index === 0 ? "lg:row-span-2" : ""} ${index === 3 ? "lg:row-span-2 lg:col-start-3 lg:row-start-1" : ""}`}>
+            <Card key={index} className={`relative overflow-hidden h-full ${index === 0 ? "lg:row-span-2" : ""} ${index === 3 ? "lg:row-span-2 lg:col-start-3 lg:row-start-1" : ""}`}>
               <div className="absolute inset-px rounded-lg bg-white"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-                <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                <div className="flex flex-col items-center justify-center h-full text-center px-8 py-10">
+                  <p className="text-lg font-medium tracking-tight text-gray-950">
                     {problem.title}
                   </p>
-                  <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                  <p className="mt-2 text-sm/6 text-gray-600">
                     {problem.content}
                   </p>
-                </div>
-                <div className="flex flex-1 items-center justify-center p-4">
-                  {/* Content area - no images as requested */}
                 </div>
               </div>
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5"></div>
