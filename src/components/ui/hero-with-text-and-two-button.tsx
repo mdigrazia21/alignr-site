@@ -5,9 +5,9 @@ import { Badge } from "@/components/ui/badge";
 
 function Hero1() {
   return (
-    <div className="w-full">
-      <div className="container mx-auto">
-        <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col lg:pt-24 lg:pb-36 relative">
+    <div className="w-full min-h-[90vh] flex flex-col">
+      <div className="container mx-auto flex-grow flex items-start">
+        <div className="flex gap-8 pt-20 pb-40 lg:pt-24 lg:pb-60 items-center justify-center flex-col w-full relative">
           {/* Subtle geometric shapes positioned in a triangle around the heading */}
           <div className="absolute top-[15%] left-[15%] w-16 h-16 rounded-full bg-[#C3F0C8] opacity-30 rotate-12 transform-gpu"></div>
           <div className="absolute top-[30%] right-[20%] w-14 h-14 bg-[#FEC6A1] opacity-30 rounded-lg rotate-45 transform-gpu"></div>
