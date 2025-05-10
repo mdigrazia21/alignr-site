@@ -34,7 +34,7 @@ export function WhyUsSection() {
     title: "Consistent Quality",
     description: "We know your needs deeply! Consistent Quality, same hiring expert every time"
   }];
-  return <section className="w-full bg-slate-50 py-[72px]">
+  return <section className="w-full bg-slate-50 py-[84px]">
       <div className="container mx-auto">
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="text-center text-base/7 font-semibold text-primary">For every hire & every client we help...</h2>

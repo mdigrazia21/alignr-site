@@ -33,7 +33,7 @@ export function ContactSection() {
       message: ""
     });
   };
-  return <section className="w-full bg-white py-[72px]">
+  return <section className="w-full bg-white py-[84px]">
       <div className="container mx-auto">
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-[-2px] leading-tight font-dm-sans mb-6">

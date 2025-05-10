@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 export function WhatWeDoSection() {
   const roles = ["HR & Talent", "Sales", "Admin", "Finance", "Operations"];
-  return <section className="w-full bg-white py-[72px]">
+  return <section className="w-full bg-white py-[84px]">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <div className="flex flex-col items-center text-center mb-8">
           <h2 className="text-center text-base/7 font-semibold text-primary">Plain and simple</h2>

@@ -26,7 +26,7 @@ export function HowWeHelpSection() {
     description: "We provide in-depth support across interview scorecards & tactics to give you more confidence, and post placement support to protect your investment and help them thrive!",
     icon: <Heart className="w-10 h-10 text-primary" />
   }];
-  return <section className="w-full bg-slate-50 py-[72px]">
+  return <section className="w-full bg-slate-50 py-[84px]">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <div className="flex flex-col items-center text-center mb-8">
           <h2 className="text-center text-base/7 font-semibold text-primary">We can help</h2>
