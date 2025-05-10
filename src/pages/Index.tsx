@@ -1,11 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { Hero } from "@/components/ui/hero-with-image-text-and-two-buttons";
+import { Navbar } from "@/components/Navbar";
+import { ProblemSection } from "@/components/ProblemSection";
+import { WhatWeDoSection } from "@/components/WhatWeDoSection";
+import { HowWeHelpSection } from "@/components/HowWeHelpSection";
+import { ResultsSection } from "@/components/ResultsSection";
+import { WhyUsSection } from "@/components/WhyUsSection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen font-dm-sans">
+      <Navbar />
+      <div className="pt-20"> {/* Padding to account for fixed navbar */}
+        <Hero />
+        <ProblemSection />
+        <WhatWeDoSection />
+        <HowWeHelpSection />
+        <ResultsSection />
+        <WhyUsSection />
+        <ContactSection />
+        <Footer />
       </div>
     </div>
   );
