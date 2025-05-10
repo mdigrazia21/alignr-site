@@ -1,6 +1,4 @@
 
-import { Button } from "@/components/ui/button";
-import { PhoneCall } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Navbar() {
@@ -14,6 +12,23 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Define navigation links with corresponding section IDs
+  const navLinks = [
+    { text: "Home", sectionId: "hero" },
+    { text: "Services", sectionId: "what-we-do" },
+    { text: "About", sectionId: "how-we-help" },
+    { text: "Contact", sectionId: "contact" }
+  ];
+
+  // Function to scroll to a section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Smooth scroll to the element
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav 
@@ -35,37 +50,29 @@ export function Navbar() {
           
           <div className="hidden md:flex items-center gap-8">
             <ul className="flex items-center gap-8">
-              {['Home', 'Services', 'About', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a 
-                    href="#" 
-                    className="font-medium font-dm-sans text-muted-foreground hover:text-primary transition-colors"
+              {navLinks.map((item) => (
+                <li key={item.text}>
+                  <button 
+                    onClick={() => scrollToSection(item.sectionId)} 
+                    className="font-medium font-dm-sans text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                   >
-                    {item}
-                  </a>
+                    {item.text}
+                  </button>
                 </li>
               ))}
             </ul>
-            <Button 
-              size="sm" 
-              variant="outline" 
-              className="rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md hover:bg-primary hover:text-white gap-2"
-            >
-              <PhoneCall className="w-4 h-4" /> Contact Us
-            </Button>
+            {/* Contact Us button removed */}
           </div>
           
-          <Button 
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
+          <button 
+            className="md:hidden p-2"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="4" x2="20" y1="12" y2="12" />
               <line x1="4" x2="20" y1="6" y2="6" />
               <line x1="4" x2="20" y1="18" y2="18" />
             </svg>
-          </Button>
+          </button>
         </div>
       </div>
     </nav>

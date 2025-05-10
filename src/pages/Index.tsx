@@ -14,13 +14,21 @@ const Index = () => {
     <div className="min-h-screen font-dm-sans">
       <Navbar />
       <div className="pt-14"> {/* Reduced padding from pt-16 to pt-14 */}
-        <Hero1 />
+        <div id="hero">
+          <Hero1 />
+        </div>
         <ProblemSection />
-        <WhatWeDoSection />
-        <HowWeHelpSection />
+        <div id="what-we-do">
+          <WhatWeDoSection />
+        </div>
+        <div id="how-we-help">
+          <HowWeHelpSection />
+        </div>
         <ResultsSection />
         <WhyUsSection />
-        <ContactSection />
+        <div id="contact">
+          <ContactSection />
+        </div>
         <Footer />
       </div>
     </div>
