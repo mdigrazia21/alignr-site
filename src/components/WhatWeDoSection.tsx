@@ -14,10 +14,10 @@ export function WhatWeDoSection() {
     <section className="w-full py-24 bg-white">
       <div className="container mx-auto">
         <div className="flex flex-col items-center text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-[-2px] leading-tight font-dm-sans mb-8">
-            WHAT WE DO 
+          <h2 className="text-center text-base/7 font-semibold text-primary">WHAT WE DO</h2>
+          <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-gray-950 sm:text-5xl">
             <span className="text-muted-foreground">(PLAIN AND SIMPLE)</span>
-          </h2>
+          </p>
           <p className="text-xl text-muted-foreground max-w-3xl font-dm-sans mb-12">
             We're a modern recruitment platform for growing companies: helping you hire better, 
             align teams more effectively, and scale with confidence.
