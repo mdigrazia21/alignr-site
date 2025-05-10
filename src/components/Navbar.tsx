@@ -13,17 +13,9 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Define navigation links with corresponding section IDs
-  const navLinks = [
-    { text: "Home", sectionId: "hero" },
-    { text: "Services", sectionId: "what-we-do" },
-    { text: "About", sectionId: "how-we-help" },
-    { text: "Contact", sectionId: "contact" }
-  ];
-
-  // Function to scroll to a section
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+  // Function to scroll to the contact section
+  const scrollToContact = () => {
+    const element = document.getElementById("contact");
     if (element) {
       // Smooth scroll to the element
       element.scrollIntoView({ behavior: 'smooth' });
@@ -48,24 +40,18 @@ export function Navbar() {
             />
           </a>
           
-          <div className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-8">
-              {navLinks.map((item) => (
-                <li key={item.text}>
-                  <button 
-                    onClick={() => scrollToSection(item.sectionId)} 
-                    className="font-medium font-dm-sans text-muted-foreground hover:text-primary transition-colors cursor-pointer"
-                  >
-                    {item.text}
-                  </button>
-                </li>
-              ))}
-            </ul>
-            {/* Contact Us button removed */}
+          <div className="hidden md:flex items-center">
+            <button 
+              onClick={scrollToContact} 
+              className="font-medium font-dm-sans text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
+              Contact
+            </button>
           </div>
           
           <button 
             className="md:hidden p-2"
+            onClick={scrollToContact}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="4" x2="20" y1="12" y2="12" />
