@@ -1,5 +1,5 @@
 
-import { Hero } from "@/components/ui/hero-with-image-text-and-two-buttons";
+import { Hero1 } from "@/components/ui/hero-with-text-and-two-button";
 import { Navbar } from "@/components/Navbar";
 import { ProblemSection } from "@/components/ProblemSection";
 import { WhatWeDoSection } from "@/components/WhatWeDoSection";
@@ -14,7 +14,7 @@ const Index = () => {
     <div className="min-h-screen font-dm-sans">
       <Navbar />
       <div className="pt-16"> {/* Reduced padding from pt-20 to pt-16 */}
-        <Hero />
+        <Hero1 />
         <ProblemSection />
         <WhatWeDoSection />
         <HowWeHelpSection />
