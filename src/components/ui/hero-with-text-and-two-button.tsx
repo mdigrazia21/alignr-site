@@ -9,9 +9,9 @@ function Hero1() {
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col lg:pt-24 lg:pb-36 relative">
           {/* Subtle geometric shapes positioned in a triangle around the heading */}
-          <div className="absolute top-[15%] left-[15%] w-16 h-16 rounded-full bg-[#C3F0C8] opacity-20 rotate-12 transform-gpu"></div>
-          <div className="absolute top-[30%] right-[20%] w-14 h-14 bg-[#FEC6A1] opacity-20 rounded-lg rotate-45 transform-gpu"></div>
-          <div className="absolute bottom-[25%] left-[40%] w-12 h-12 bg-[#1e2c56] opacity-20 clip-path-triangle rotate-[30deg] transform-gpu"></div>
+          <div className="absolute top-[15%] left-[15%] w-16 h-16 rounded-full bg-[#C3F0C8] opacity-30 rotate-12 transform-gpu"></div>
+          <div className="absolute top-[30%] right-[20%] w-14 h-14 bg-[#FEC6A1] opacity-30 rounded-lg rotate-45 transform-gpu"></div>
+          <div className="absolute bottom-[25%] left-[20%] w-12 h-12 bg-[#1e2c56] opacity-20 clip-path-triangle rotate-[30deg] transform-gpu"></div>
           
           <div>
             <Badge variant="outline" className="border-[#FEC6A1] text-[#1e2c56] border-2 px-3 py-1">Recruitment done right</Badge>
