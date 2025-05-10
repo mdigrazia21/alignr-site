@@ -1,5 +1,5 @@
 
-import { MoveRight, PhoneCall } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge";
 
@@ -26,22 +26,20 @@ function Hero1() {
             </p>
           </div>
           <div className="flex flex-row gap-3">
-            <Button size="lg" className="gap-4 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md" variant="outline">
-              Let's talk hiring <PhoneCall className="w-4 h-4" />
-            </Button>
             <Button size="lg" className="gap-4 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md">
-              Sign up here <MoveRight className="w-4 h-4" />
+              Let's talk hiring <MoveRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
       </div>
       
-      {/* Add the CSS for the triangle shape */}
-      <style jsx>{`
+      <style>
+        {`
         .clip-path-triangle {
           clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 }
