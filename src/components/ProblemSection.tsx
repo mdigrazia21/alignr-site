@@ -1,6 +1,6 @@
 
 import { Card } from "@/components/ui/card";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, DollarSign, Users, BrainCircuit, TrendingDown } from "lucide-react";
 
 export function ProblemSection() {
   return (
@@ -16,29 +16,34 @@ export function ProblemSection() {
           </p>
         </div>
         
-        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-4">
           {[
             {
               title: "Spending too much",
-              content: "Spending too much on traditional recruitment agencies with high fees and no guarantee of quality"
+              content: "Spending too much on traditional recruitment agencies with high fees and no guarantee of quality",
+              icon: <DollarSign className="w-10 h-10 text-primary" />
             },
             {
               title: "Not getting great talent",
-              content: "Experiencing frustration with candidates who don't match your requirements or culture"
+              content: "Experiencing frustration with candidates who don't match your requirements or culture",
+              icon: <Users className="w-10 h-10 text-primary" />
             },
             {
               title: "Stressed about hiring",
-              content: "Feeling overwhelmed by having to handle recruitment yourself while managing your core business"
+              content: "Feeling overwhelmed by having to handle recruitment yourself while managing your core business",
+              icon: <BrainCircuit className="w-10 h-10 text-primary" />
             },
             {
               title: "Lost confidence & productivity",
-              content: "Dealing with the aftermath of bad hires that impact team morale and business performance"
+              content: "Dealing with the aftermath of bad hires that impact team morale and business performance",
+              icon: <TrendingDown className="w-10 h-10 text-primary" />
             }
           ].map((problem, index) => (
-            <Card key={index} className={`relative overflow-hidden h-full ${index === 0 ? "lg:row-span-2" : ""} ${index === 3 ? "lg:row-span-2 lg:col-start-3 lg:row-start-1" : ""}`}>
+            <Card key={index} className="relative overflow-hidden h-full">
               <div className="absolute inset-px rounded-lg bg-white"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
                 <div className="flex flex-col items-center justify-center h-full text-center px-8 py-10">
+                  <div className="mb-4">{problem.icon}</div>
                   <p className="text-lg font-medium tracking-tight text-gray-950">
                     {problem.title}
                   </p>
