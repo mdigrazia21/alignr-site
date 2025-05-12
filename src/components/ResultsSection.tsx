@@ -1,25 +1,26 @@
+
 import React from "react";
 export function ResultsSection() {
   const stats = [{
     id: 1,
     name: "Placements",
-    value: "14"
+    value: "300+"
   }, {
     id: 2,
     name: "Retention",
-    value: "100%"
+    value: "96%"
   }, {
     id: 3,
     name: "Fill rate",
-    value: "100%"
+    value: "98%"
   }, {
     id: 4,
     name: "Average hire time",
-    value: "3 weeks"
+    value: "3.5 weeks"
   }, {
     id: 5,
     name: "Client Savings",
-    value: "30%"
+    value: "$69k"
   }];
   return <section className="bg-white py-24 sm:py-[96px]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
