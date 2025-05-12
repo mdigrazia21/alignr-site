@@ -8,10 +8,7 @@ export function WhatWeDoSection() {
           <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-gray-950 sm:text-5xl">
             What we do
           </p>
-          <p className="text-lg text-muted-foreground max-w-2xl mt-4 font-dm-sans">
-            We're a modern recruitment platform for growing companies: helping you hire better, 
-            align teams more effectively, and scale with confidence.
-          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl mt-4 font-dm-sans">We're a modern recruitment agency designed for Australian businesses: helping you hire better, align teams more effectively, and scale with confidence.</p>
         </div>
         
         <div className="w-full max-w-2xl mx-auto mt-10">
