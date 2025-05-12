@@ -1,9 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { PhoneCall } from "lucide-react";
 import { useState } from "react";
+
 export function ContactSection() {
   const [formState, setFormState] = useState({
     name: "",
@@ -11,6 +12,7 @@ export function ContactSection() {
     company: "",
     message: ""
   });
+  
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -21,6 +23,7 @@ export function ContactSection() {
       [name]: value
     }));
   };
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formState);
@@ -33,6 +36,7 @@ export function ContactSection() {
       message: ""
     });
   };
+  
   return <section className="w-full bg-white py-[84px]">
       <div className="container mx-auto">
         <div className="flex flex-col items-center text-center mb-16">
@@ -72,7 +76,7 @@ export function ContactSection() {
               </div>
               
               <Button type="submit" className="w-full rounded-xl shadow-sm transition-all duration-300 hover:shadow-md gap-2">
-                Send Message <PhoneCall className="w-4 h-4" />
+                Send Message
               </Button>
             </form>
           </CardContent>
