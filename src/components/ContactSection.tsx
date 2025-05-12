@@ -32,7 +32,7 @@ export function ContactSection() {
   e.preventDefault();
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbxDZkTetc7Gi04JlMANc2Rdv-98-0IiXl24pMImyz-5TBXUxB52Rlx60dPHBgZFoQ_eWA/exec", {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbz_KJtjJ62J2Fohf1G10YFwtDuXTjixt8YjeAXU9mFzb6GYXhpvPP3MDOKDLDrWY8n70Q/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
