@@ -28,19 +28,40 @@ export function ContactSection() {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formState);
-    // In a real app, you would send this data to a server
-    setIsSubmitted(true);
-    // Reset form
-    setFormState({
-      name: "",
-      email: "",
-      company: "",
-      message: ""
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbxDZkTetc7Gi04JlMANc2Rdv-98-0IiXl24pMImyz-5TBXUxB52Rlx60dPHBgZFoQ_eWA/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formState)
     });
-  };
+
+  console.log("Response status:", response.status);
+  const text = await response.text();  // decode the actual error
+  console.log("Response text:", text);
+    
+    if (response.ok) {
+      setIsSubmitted(true);
+      setFormState({
+        name: "",
+        email: "",
+        company: "",
+        message: ""
+      });
+    } else {
+      alert("There was an issue submitting your message. Please try again.");
+    }
+  } catch (error) {
+    console.error("Submission error:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
+
+
 
   const handleNewMessage = () => {
     setIsSubmitted(false);
