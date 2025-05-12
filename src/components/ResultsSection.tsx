@@ -16,7 +16,7 @@ export function ResultsSection() {
   }, {
     id: 4,
     name: "Average hire time",
-    value: "3.5 weeks"
+    value: "3 weeks"
   }, {
     id: 5,
     name: "Client Savings",
