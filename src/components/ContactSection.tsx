@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { Textarea } from "@/components/ui/textarea";
+import { Check } from "lucide-react";
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
@@ -12,6 +14,8 @@ export function ContactSection() {
     company: "",
     message: ""
   });
+  
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
@@ -28,13 +32,18 @@ export function ContactSection() {
     e.preventDefault();
     console.log("Form submitted:", formState);
     // In a real app, you would send this data to a server
-    alert("Thanks for contacting us! We'll be in touch soon.");
+    setIsSubmitted(true);
+    // Reset form
     setFormState({
       name: "",
       email: "",
       company: "",
       message: ""
     });
+  };
+
+  const handleNewMessage = () => {
+    setIsSubmitted(false);
   };
   
   return <section className="w-full bg-white py-[84px]">
@@ -53,32 +62,50 @@ export function ContactSection() {
             <CardTitle className="text-2xl font-dm-sans">Send us a message</CardTitle>
           </CardHeader>
           <CardContent className="p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" name="name" placeholder="Your name" className="rounded-xl" value={formState.name} onChange={handleInputChange} required />
+            {isSubmitted ? (
+              <div className="flex flex-col items-center justify-center py-8 text-center">
+                <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                  <Check className="h-6 w-6 text-green-600" />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" name="email" type="email" placeholder="you@company.com" className="rounded-xl" value={formState.email} onChange={handleInputChange} required />
+                <h3 className="text-2xl font-medium mb-2">Thank you!</h3>
+                <p className="text-muted-foreground mb-6">
+                  We've received your message and will be in touch shortly.
+                </p>
+                <Button
+                  onClick={handleNewMessage}
+                  className="rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
+                >
+                  Send another message
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input id="name" name="name" placeholder="Your name" className="rounded-xl" value={formState.name} onChange={handleInputChange} required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" name="email" type="email" placeholder="you@company.com" className="rounded-xl" value={formState.email} onChange={handleInputChange} required />
+                  </div>
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="company">Company</Label>
-                <Input id="company" name="company" placeholder="Your company name" className="rounded-xl" value={formState.company} onChange={handleInputChange} required />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <textarea id="message" name="message" rows={4} placeholder="Tell us about your hiring needs..." className="w-full rounded-xl border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" value={formState.message} onChange={handleInputChange} required />
-              </div>
-              
-              <Button type="submit" className="w-full rounded-xl shadow-sm transition-all duration-300 hover:shadow-md gap-2">
-                Send Message
-              </Button>
-            </form>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="company">Company</Label>
+                  <Input id="company" name="company" placeholder="Your company name" className="rounded-xl" value={formState.company} onChange={handleInputChange} required />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" name="message" rows={4} placeholder="Tell us about your hiring needs..." className="w-full rounded-xl border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" value={formState.message} onChange={handleInputChange} required />
+                </div>
+                
+                <Button type="submit" className="w-full rounded-xl shadow-sm transition-all duration-300 hover:shadow-md gap-2">
+                  Send Message
+                </Button>
+              </form>
+            )}
           </CardContent>
         </Card>
       </div>
