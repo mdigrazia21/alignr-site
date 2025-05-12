@@ -4,6 +4,14 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge";
 
 function Hero1() {
+  const scrollToContact = () => {
+    // Find the contact section element and scroll to it
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="w-full min-h-[90vh] flex flex-col">
       <div className="container mx-auto flex-grow flex items-start">
@@ -26,7 +34,7 @@ function Hero1() {
             </p>
           </div>
           <div className="flex flex-row gap-3">
-            <Button size="lg" className="gap-4 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md">
+            <Button size="lg" className="gap-4 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md" onClick={scrollToContact}>
               Let's talk hiring <MoveRight className="w-4 h-4" />
             </Button>
           </div>
