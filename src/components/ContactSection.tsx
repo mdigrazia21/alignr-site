@@ -20,17 +20,23 @@ export function ContactSection() {
       const response = await fetch("https://getform.io/f/bvryedrb", {
         method: "POST",
         body: formData,
+        redirect: "manual" // Prevent fetch from choking on redirect
       });
 
-      if (response.ok) {
+      const status = response.status;
+
+      if (status === 200 || status === 302 || response.type === "opaqueredirect") {
         setIsSubmitted(true);
         e.currentTarget.reset();
       } else {
+        console.warn("Unexpected status:", status);
         alert("There was an issue submitting your message. Please try again.");
       }
     } catch (error) {
-      console.error("Submission error:", error);
-      alert("Something went wrong. Please try again.");
+      console.error("Caught error:", error);
+      if (!isSubmitted) {
+        alert("Something went wrong. Please try again.");
+      }
     } finally {
       setIsSubmitting(false);
     }
