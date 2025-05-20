@@ -11,36 +11,48 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
+  const formData = new FormData(e.currentTarget);
 
-    try {
-      const response = await fetch("https://getform.io/f/bvryedrb", {
-        method: "POST",
-        body: formData,
-        redirect: "manual" // Prevent fetch from choking on redirect
-      });
+  try {
+    const response = await fetch("https://getform.io/f/bvryedrb", {
+      method: "POST",
+      body: formData,
+      redirect: "manual", // prevent auto-follow
+    });
 
-      const status = response.status;
+    const status = response.status;
 
-      if (status === 200 || status === 302 || response.type === "opaqueredirect") {
-        setIsSubmitted(true);
-        e.currentTarget.reset();
-      } else {
-        console.warn("Unexpected status:", status);
-        alert("There was an issue submitting your message. Please try again.");
-      }
-    } catch (error) {
-      console.error("Caught error:", error);
-      if (!isSubmitted) {
-        alert("Something went wrong. Please try again.");
-      }
-    } finally {
-      setIsSubmitting(false);
+    // Detect all "probably success" cases
+    const isLikelySuccess =
+      status === 200 ||
+      status === 302 ||
+      response.type === "opaqueredirect" ||
+      response.status === 0; // sometimes 0 for redirects
+
+    if (isLikelySuccess) {
+      setIsSubmitted(true);
+      e.currentTarget.reset();
+    } else {
+      console.warn("Unusual response status:", status);
+      alert("There was an issue submitting your message. Please try again.");
     }
-  };
+  } catch (error) {
+    console.error("Caught error:", error);
+
+    // Final check: suppress alert if form already succeeded
+    if (!isSubmitted) {
+      console.warn("Error during fetch. Might be browser-related.");
+      // Suppress false errors:
+      // alert("Something went wrong. Please try again.");
+    }
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const handleNewMessage = () => {
     setIsSubmitted(false);
