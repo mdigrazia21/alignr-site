@@ -20,7 +20,7 @@ export function ResultsSection() {
   }, {
     id: 5,
     name: "Client Savings",
-    value: "$69k"
+    value: "$375k"
   }];
   return <section className="bg-white py-24 sm:py-[96px]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
